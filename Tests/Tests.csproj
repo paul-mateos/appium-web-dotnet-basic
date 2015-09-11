@@ -57,7 +57,6 @@
     <Compile Include="BrowsingTest.cs" />
     <Compile Include="Wait.cs" />
     <Compile Include="DriverManager.cs" />
-    <Compile Include="TestManager.cs" />
     <Compile Include="Platform.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\ResultsPage.cs" />

@@ -17,11 +17,6 @@ namespace Tests
             _platform = platform;
         }
 
-        public DriverManager(TestManager testManager)
-        {
-            _platform = testManager.CurrentPlatform;
-        }
-
         public AppiumDriver<AppiumWebElement> Driver
         {
             get { return _driver ?? Init(); }

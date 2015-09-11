@@ -13,18 +13,17 @@ namespace Tests
     public class BrowsingTest
     {
         private DriverManager _driverManager;
-        private TestManager _testManager;
+        private Platform _platform;
 
         public BrowsingTest(Platform platform)
         {
-            _testManager = new TestManager(platform);
+            _platform = platform;
         }
 
         [SetUp]
         public void BeforeEach()
         {
-            _testManager.SetupAndStartDriver();
-            _driverManager = new DriverManager(_testManager);
+            _driverManager = new DriverManager(_platform);
             _driverManager.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
         }
 
@@ -68,7 +67,7 @@ namespace Tests
         [TearDown]
         public void AfterEachTest()
         {
-            _testManager.SetupAndStartDriver();
+            _driverManager.CloseConnectionToDriver();
         }
     }
 }
